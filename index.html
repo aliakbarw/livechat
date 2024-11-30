@@ -3,18 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fake Livestream Chat - Football Theme</title>
+  <title>Fake Livestream Chat - YouTube Theme</title>
   <style>
+    /* Body Styling for YouTube-like Dark Theme */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #181818;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
     /* Chat Box Styling */
     #chat-box {
-      width: 300px;
+      width: 320px;
       height: 400px;
       overflow-y: scroll;
-      border: 1px solid #ccc;
-      padding: 10px;
       border-radius: 8px;
-      background-color: #f9f9f9;
-      font-family: Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.1); /* Transparent white */
+      backdrop-filter: blur(8px); /* Blur effect */
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
     .chat-message {
@@ -23,7 +38,7 @@
 
     .username {
       font-weight: bold;
-      color: #007BFF;
+      color: #3ea6ff; /* YouTube blue */
     }
 
     .message {
@@ -33,7 +48,7 @@
     /* Highlight for special messages */
     .highlight {
       font-weight: bold;
-      color: #FF5733;
+      color: #ff5722; /* YouTube red */
     }
   </style>
 </head>
@@ -45,7 +60,7 @@
   <script>
     const chatBox = document.getElementById("chat-box");
 
-    // Predefined football chat messages
+    // Predefined eFootball-themed chat messages
     const messages = [
       "Goooooolll! 🔥🔥🔥",
       "Mantap banget tendangannya! 💥⚽",
@@ -57,26 +72,26 @@
       "Ayo bangun serangan, Mbappe!",
       "Keren banget defense-nya Virgil van Dijk!",
       "Sumpah, keeper kayak dewa hari ini! 🙌",
-      "Wah, kartu kuning tuh harusnya. 😡",
-      "Serangan balik yang cepet banget!",
-      "Wasitnya berat sebelah nggak sih? 😤",
-      "Corner kick nih, ayo cetak gol!",
-      "Free kick kayaknya masuk deh ini. 🎯",
-      "Ayo Garuda di Dadaku! 🇮🇩🔥",
-      "Come on, Liverpool! YNWA!",
-      "Madridista di sini mana suaranya? ⚪🔵",
-      "Timnas Indonesia bisa menang ini!",
-      "Barca forever, nggak peduli apa pun! 💙❤️",
-      "Fans Arsenal pasti lagi deg-degan, wkwkwk! 🤣",
-      "MU kapan juara lagi sih? 😂",
-      "PSG beli trofi, bukan main bola. 🤷‍♂️",
-      "Chelsea lagi rebuild terus wkwk.",
-      "Wah, kalah lagi Spurs, biasa lah. 😅",
-      "Ayo guys, kasih like buat live-nya!",
-      "Jangan lupa subscribe channel ini, ya!",
-      "Siapa dukung tim mana? Komen dong!",
-      "Gimana prediksi skornya?",
-      "Match ini udah kayak final Champions League. 🔥"
+      "Ayo, coba pake formasi 4-3-3, pasti menang! ⚽🎮",
+      "Wah, tendangan bebas itu OP banget di eFootball! 🎯",
+      "Jangan lupa atur skill move, bro! 🔄",
+      "Messi di eFootball emang dewa banget! 🐐",
+      "Ganti pemain dong, stamina abis itu! 💪",
+      "Keren banget dribble-nya, kayak pro player! 😎",
+      "Ayo bang, bikin gol solo run kayak Mbappe! ⚡",
+      "Apaan tuh, own goal?! Wkwkwk! 😂",
+      "Skill move-nya rusuh banget, GG! 🔥",
+      "Jangan spam sprint terus, capek pemainnya. 🏃‍♂️",
+      "Waduh, lawan pake Bayern, auto susah! 😅",
+      "Itu penalti nggak sih?! Wasit kok nggak ngasih! 😡",
+      "Koneksi kayaknya delay nih. Ping tinggi? 🔌⚡",
+      "Coba long ball ke striker, gampang gol! 🎯",
+      "Mantap banget counter attack-nya! 🎮⚽",
+      "Bang, kapan main match online sama viewers? 🕹️",
+      "Ayo, buat giveaway coins eFootball dong! 🎁",
+      "Coba transfer Ronaldo ke tim lo, seru tuh! 🤔",
+      "Nonton stream ini sambil main juga, seru banget! 🔥",
+      "Bang, kasih tips bikin gol jarak jauh dong! 📏⚽"
     ];
 
     // Generate random chat messages
