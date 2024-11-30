@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Livestream Chat - Football Theme</title>
+  <style>
+    /* Chat Box Styling */
+    #chat-box {
+      width: 300px;
+      height: 400px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    .chat-message {
+      margin: 5px 0;
+    }
+
+    .username {
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    .message {
+      margin-left: 10px;
+    }
+
+    /* Highlight for special messages */
+    .highlight {
+      font-weight: bold;
+      color: #FF5733;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-box">
+    <!-- Chat messages will be dynamically inserted here -->
+  </div>
+
+  <script>
+    const chatBox = document.getElementById("chat-box");
+
+    // Predefined football chat messages
+    const messages = [
+      "Goooooolll! 🔥🔥🔥",
+      "Mantap banget tendangannya! 💥⚽",
+      "Keeper-nya nggak bisa apa-apa tuh. 😱",
+      "Wah, offside nggak tuh?",
+      "Seru banget golnya! ❤️‍🔥",
+      "Messi magic lagi nih! 🐐",
+      "Ronaldo-nya udah tua tapi masih gacor! 🦅",
+      "Ayo bangun serangan, Mbappe!",
+      "Keren banget defense-nya Virgil van Dijk!",
+      "Sumpah, keeper kayak dewa hari ini! 🙌",
+      "Wah, kartu kuning tuh harusnya. 😡",
+      "Serangan balik yang cepet banget!",
+      "Wasitnya berat sebelah nggak sih? 😤",
+      "Corner kick nih, ayo cetak gol!",
+      "Free kick kayaknya masuk deh ini. 🎯",
+      "Ayo Garuda di Dadaku! 🇮🇩🔥",
+      "Come on, Liverpool! YNWA!",
+      "Madridista di sini mana suaranya? ⚪🔵",
+      "Timnas Indonesia bisa menang ini!",
+      "Barca forever, nggak peduli apa pun! 💙❤️",
+      "Fans Arsenal pasti lagi deg-degan, wkwkwk! 🤣",
+      "MU kapan juara lagi sih? 😂",
+      "PSG beli trofi, bukan main bola. 🤷‍♂️",
+      "Chelsea lagi rebuild terus wkwk.",
+      "Wah, kalah lagi Spurs, biasa lah. 😅",
+      "Ayo guys, kasih like buat live-nya!",
+      "Jangan lupa subscribe channel ini, ya!",
+      "Siapa dukung tim mana? Komen dong!",
+      "Gimana prediksi skornya?",
+      "Match ini udah kayak final Champions League. 🔥"
+    ];
+
+    // Generate random chat messages
+    function generateMessage() {
+      const message = messages[Math.floor(Math.random() * messages.length)];
+      const username = `User${Math.floor(Math.random() * 1000)}`;
+      const isHighlight = message.includes("Goooooolll!") || message.includes("Mantap");
+      const messageClass = isHighlight ? "chat-message highlight" : "chat-message";
+      return `<div class="${messageClass}"><span class="username">${username}:</span><span class="message">${message}</span></div>`;
+    }
+
+    // Add messages dynamically
+    function simulateChat() {
+      const newMessage = generateMessage();
+      chatBox.innerHTML += newMessage;
+      chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the bottom
+    }
+
+    // Simulate a live chat every 10 seconds
+    setInterval(simulateChat, 10000); // 10 seconds interval
+  </script>
+</body>
+</html>
